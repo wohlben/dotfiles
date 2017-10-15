@@ -9,3 +9,4 @@ alias gadd='git add --all && git commit && git push --all'
 
 alias pgcli="/home/ben/pythonENVS/pgcli/bin/pgcli -d scraper"
 
+alias i3settings="unset XDG_CURRENT_DESKTOP; unity-control-center"

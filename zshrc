@@ -76,5 +76,3 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-alias i3settings="unset XDG_CURRENT_DESKTOP; unity-control-center"
-
