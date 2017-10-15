@@ -1,0 +1,9 @@
+[user]
+	email = xion03@gmail.com
+	name = Ben
+[alias]
+	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+[push]
+	default = simple
+[core]
+	quotepath = false
