@@ -140,7 +140,21 @@ bar {
         status_command i3status
         tray_output primary
 }
-exec --no-startup-id /usr/bin/unity-settings-daemon
+
+
+# xubuntu
+exec --no-startup-id /usr/bin/xfsettingsd
+# ubuntu
+# exec --no-startup-id /usr/bin/unity-settings-daemon
+
+# media volume buttons
+exec --no-startup-id /usr/bin/xfce4-volumed
+
+# wallpapers
+exec --no-startup-id nitrogen --restore
+
+# display config
+exec --no-startup-id xrandr --output HDMI-1 --pos 0x50 --output DP-1 --mode 2560x1440 --pos 1920x0 --primary --output DVI-I-1 --pos 4480x100 --output DVI-D-1 --off
 
 bindsym mod1+mod4+Right move workspace to output right
 bindsym mod1+mod4+Left move workspace to output left
