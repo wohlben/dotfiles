@@ -76,3 +76,5 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+alias vlmn=pavucontrol
+alias fix_mon="xrandr --output HDMI-1 --pos 0x50 --output DP-1 --mode 2560x1440 --pos 1920x0 --primary --output DVI-I-1 --pos 4480x100 --output DVI-D-1 --off"
