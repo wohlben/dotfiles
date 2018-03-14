@@ -13,3 +13,6 @@
 [submodule "vim/bundle/detectindent"]
 	path = vim/bundle/detectindent
 	url = https://github.com/ciaranm/detectindent
+[submodule "tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
