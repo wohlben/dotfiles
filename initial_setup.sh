@@ -31,7 +31,6 @@ else
 	echo "i3 repo already exists"
 fi
 
-
 apt_dependencies=(git i3 zsh sqlite3 fonts-powerline)
 installed_packages=$(apt list --installed 2> /dev/null | grep -Po "(.*?)(?=\/)")
 for dependency in "${apt_dependencies[@]}"; do
@@ -45,7 +44,6 @@ for dependency in "${apt_dependencies[@]}"; do
 done
 echo -e "apt dependecies should be installed, if it failed use this: \n  apt install ${apt_dependencies[@]}"
 
-
 if [ ! -d ~/.dotfiles ]; then
 	echo "cloning dotfiles repo"
 	git clone --recursive https://github.com/wohlben/dotfiles ~/.dotfiles
@@ -54,11 +52,19 @@ else
 	echo "dotfiles repo already exists"
 fi
 
+if [ ! -f ~/.dotfiles/fzf/bin/fzf ]; then
+	echo "installing fzf"
+	~/.dotfiles/fzf/install
+else
+	echo "fzf already exists"
+fi
+
 echo "symlinking config files to dotfiles repo"
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/vim ~/.vim
+test -L ~/.dotfiles/vim/vim && unlink ~/.dotfiles/vim/vim
 test -L ~/.config/i3 || ( rm -rf ~/.config/i3 && echo "removed nonsymlink i3 config file" )
 ln -sf ~/.dotfiles/i3 ~/.config/
 
