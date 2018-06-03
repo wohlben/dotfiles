@@ -19,3 +19,6 @@
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "git-wip"]
+	path = git-wip
+	url = git://github.com/bartman/git-wip.git
