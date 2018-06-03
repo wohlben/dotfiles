@@ -154,7 +154,7 @@ exec --no-startup-id /usr/bin/xfce4-volumed
 exec --no-startup-id xsetroot -solid "#333333" 
 
 # display config
-exec --no-startup-id xrandr --output HDMI-1 --pos 0x50 --output DP-1 --mode 2560x1440 --pos 1920x0 --primary --output DVI-I-1 --pos 4480x100 --output DVI-D-1 --off
+exec --no-startup-id xrandr --output DP-1 --mode 2560x1440 --pos 0x0 --output HDMI-1 --pos 2560x0 --primary --output DVI-I-1 --pos 5120x100
 exec --no-startup-id xmodmap ~/.Xmodmap
 # disable screen blanking
 exec --no-startup-id xset s off -dpms

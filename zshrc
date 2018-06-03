@@ -54,7 +54,7 @@ ZSH_CUSTOM=~/.dotfiles/zsh_custom
 plugins=(git zsh-autosuggestions histdb nvm django)
 
 # User configuration
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ben/apps"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/wohlben/apps"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -77,5 +77,3 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 alias vlmn=pavucontrol
-alias fix_mon="xrandr --output HDMI-1 --pos 0x50 --output DP-1 --mode 2560x1440 --pos 1920x0 --primary --output DVI-I-1 --pos 4480x100 --output DVI-D-1 --off"
-
