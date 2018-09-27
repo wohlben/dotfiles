@@ -5,17 +5,17 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font pango:monospace 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 10
 
 # Use Mouse+$sup to drag floating windows to their wanted position
 floating_modifier $sup
 
 # start a terminal
-bindsym $sup+Return exec i3-sensible-terminal
+bindsym $sup+Return exec gnome-terminal
 
 bindsym $sup+$mod+l exec i3lock
 
@@ -147,15 +147,15 @@ bar {
 
 
 # xubuntu
-exec --no-startup-id /usr/bin/xfsettingsd
+# exec --no-startup-id /usr/bin/xfsettingsd
 # ubuntu
 # exec --no-startup-id /usr/bin/unity-settings-daemon
 
 # media volume buttons
-exec --no-startup-id /usr/bin/xfce4-volumed
+# exec --no-startup-id /usr/bin/xfce4-volumed
 
 # wallpapers
-exec --no-startup-id xsetroot -solid "#333333"
+#exec --no-startup-id xsetroot -solid "#333333"
 
 # display config
 exec --no-startup-id xrandr --output DP-1 --mode 2560x1440 --pos 0x0 --output HDMI-1 --pos 2560x0 --primary --output DVI-I-1 --pos 5120x100

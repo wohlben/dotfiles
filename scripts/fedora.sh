@@ -1,12 +1,16 @@
 function main-packages(){
+  set -x
   sudo dnf install powerline-fonts git zsh i3 sqlite
+  set +x
 }
 
 function install-editors(){
+  set -x
   atom-repo
   code-repo
 
   dnf install code atom
+  set +x
 }
 
 function atom-repo(){
@@ -43,9 +47,13 @@ EOF"
 }
 
 function install-stuff(){
+  set -x
   sudo dnf install snapd
 
   sudo ln -s /var/lib/snapd/snap /snap
 
   sudo snap install insomnia
+
+  sudo dnf install gnome-tweak-tool pavucontrol
+  set +x
 }

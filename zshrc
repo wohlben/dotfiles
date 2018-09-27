@@ -77,3 +77,7 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 alias vlmn=pavucontrol
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/wohlben/.sdkman"
+[[ -s "/home/wohlben/.sdkman/bin/sdkman-init.sh" ]] && source "/home/wohlben/.sdkman/bin/sdkman-init.sh"
