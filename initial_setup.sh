@@ -7,7 +7,7 @@ function askExecute(){
 	if [[ "$SHELL" == "/usr/bin/zsh" ]]; then
 		vared -p "do that?" -c verifyEx
 	else
-		read -r "do that?" verifyEx
+		read -rp "do that?" verifyEx
 	fi
 	if [[ "$verifyEx" == "y" ]]; then
 		$cmd
