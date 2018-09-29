@@ -1,3 +1,14 @@
+function install-docker(){
+	set -x
+	sudo dnf install dnf-plugins-core
+	if [ ! -f /etc/yum.repos.d/docker-ce.repo ]; then
+		sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+	fi
+	sudo dnf install docker-ce
+	set +x
+
+}
+
 function main-packages(){
   set -x
   sudo dnf install powerline-fonts git zsh i3 sqlite
