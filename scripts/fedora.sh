@@ -6,7 +6,25 @@ function install-docker(){
 	fi
 	sudo dnf install docker-ce
 	set +x
+}
 
+function install-ansible(){
+	set -x
+	sudo dnf install ansible
+	if [ ! -L ~/ansible ]; then
+		ln -s ~/scripts/ansible ~/ansible
+	fi
+	if [ ! -L /etc/ansible/ansible.cfg ]; then
+		sudo rm -i /etc/ansible/ansible.cfg
+		sudo ln -s ~/ansible/ansible.cfg /etc/ansible/ansible.cfg
+	fi
+	set +x
+}
+function install-wireguard(){
+	set -x
+	sudo dnf copr enable jdoss/wireguard
+	sudo dnf install wireguard-dkms wireguard-tools
+	set +x
 }
 
 function main-packages(){

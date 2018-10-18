@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.dotfiles/oh-my-zsh
+HIST_IGNORE_ALL_DUPS=true
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
