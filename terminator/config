@@ -1,0 +1,68 @@
+[global_config]
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[scrapes]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 993d92bf-9cf7-4293-87a7-007bc96c6be2
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 0:22
+      size = 2556, 1392
+      title = wohlben@fedora: ~
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 1276
+      ratio = 0.500196001568
+      type = HPaned
+    [[[child3]]]
+      order = 1
+      parent = child1
+      position = 694
+      ratio = 0.500360490267
+      type = VPaned
+    [[[terminal2]]]
+      command = celery -A app worker  -E -l info -B
+      directory = /home/wohlben/code/novels
+      order = 0
+      parent = child1
+      profile = default
+      type = Terminal
+      uuid = 993d92bf-9cf7-4293-87a7-007bc96c6be2
+    [[[terminal4]]]
+      command = python manage.py runserver 0.0.0.0:8000
+      directory = /home/wohlben/code/novels
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = 26f58c63-4c33-4c9e-901b-e16ac59c30d9
+    [[[terminal5]]]
+      command = ""
+      directory = ""
+      order = 1
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = 9a299908-8e57-4e65-8d66-b26eac3ebbd7
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+  [[scrapes]]
+    cursor_color = "#aaaaaa"
+    custom_command = cd /home/wohlben/code/novels && pipenv shell
+    exit_action = hold
+    use_custom_command = True

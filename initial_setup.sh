@@ -69,15 +69,36 @@ function installGitWip(){
 	fi
 }
 
+function setSymlink(){
+	local file=$1
+	local dest_file=${2:-$1}
+	local src=${HOME_DIRECTORY}/.dotfiles/$file
+	local dest=${HOME_DIRECTORY}/$dest_file
+	if [[ -L $dest ]]; then
+		local actual_src=$(readlink $dest)
+		if [[ $src != $actual_src ]]; then
+			unlink $dest
+		else
+			echo $file has already been linked
+			return
+		fi
+	else
+		rm -rf $dest
+		echo removed nonsymlink $dest
+	fi
+	ln -s $src $dest
+}
+
 function enforceConfigSymlinks(){
 	echo "symlinking config files to dotfiles repo"
-	ln -sf ${HOME_DIRECTORY}/.dotfiles/vimrc ${HOME_DIRECTORY}/.vimrc
-	ln -sf ${HOME_DIRECTORY}/.dotfiles/zshrc ${HOME_DIRECTORY}/.zshrc
-	ln -sf ${HOME_DIRECTORY}/.dotfiles/gitconfig ${HOME_DIRECTORY}/.gitconfig
-	ln -sf ${HOME_DIRECTORY}/.dotfiles/vim ${HOME_DIRECTORY}/.vim
+	setSymlink vimrc .vimrc
+	setSymlink zshrc .zshrc
+	setSymlink .gitconfig gitconfig
+	setSymlink .gitignore .gitignore
+	setSymlink vim .vim
 	test -L ${HOME_DIRECTORY}/.dotfiles/vim/vim && unlink ${HOME_DIRECTORY}/.dotfiles/vim/vim
-	test -L ${HOME_DIRECTORY}/.config/i3 || ( rm -rf ${HOME_DIRECTORY}/.config/i3 && echo "removed nonsymlink i3 config file" )
-	ln -sf ${HOME_DIRECTORY}/.dotfiles/i3 ${HOME_DIRECTORY}/.config/
+	setSymlink i3 .config/i3
+	setSymlink terminator .config/terminator
 }
 
 function enforceDefaultShell(){
