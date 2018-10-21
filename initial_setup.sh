@@ -93,8 +93,8 @@ function enforceConfigSymlinks(){
 	echo "symlinking config files to dotfiles repo"
 	setSymlink vimrc .vimrc
 	setSymlink zshrc .zshrc
-	setSymlink .gitconfig gitconfig
-	setSymlink .gitignore .gitignore
+	setSymlink gitconfig .gitconfig
+	setSymlink gitignore .gitignore
 	setSymlink vim .vim
 	test -L ${HOME_DIRECTORY}/.dotfiles/vim/vim && unlink ${HOME_DIRECTORY}/.dotfiles/vim/vim
 	setSymlink i3 .config/i3

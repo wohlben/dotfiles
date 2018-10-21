@@ -1,6 +1,6 @@
 [user]
-	email = xion03@gmail.com
-	name = Ben
+	email = bw@wohlben.de
+	name = wohlben
 [alias]
 	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
 [push]
