@@ -25,13 +25,13 @@
       order = 0
       parent = child0
       position = 1276
-      ratio = 0.500196001568
-      type = HPaned
+      ratio = 0.33
+      type = VPaned
     [[[child3]]]
       order = 1
       parent = child1
       position = 694
-      ratio = 0.500360490267
+      ratio = 0.5
       type = VPaned
     [[[terminal2]]]
       command = celery -A app worker  -E -l info -B
