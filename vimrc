@@ -22,3 +22,8 @@ set backspace=indent,eol,start
 cnoremap w!! w !sudo tee > /dev/null %
 
 autocmd Filetype markdown set spell spelllang=de_DE
+
+if &diff
+	colorscheme vimdiff
+	set diffopt+=iwhite
+endif
