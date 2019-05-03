@@ -158,10 +158,14 @@ bar {
 #exec --no-startup-id xsetroot -solid "#333333"
 
 # display config
-exec --no-startup-id xrandr --output DP-1 --mode 2560x1440 --pos 0x0 --output HDMI-1 --pos 2560x0 --primary --output DVI-I-1 --pos 5120x100
+# exec --no-startup-id xrandr --output DP-2 --mode 2560x1440 --pos 0x0 --output HDMI-1 --pos 2560x0 --primary
+exec --no-startup-id bash ~/.dotfiles/monitor_settings.sh
+
 exec --no-startup-id xmodmap ~/.Xmodmap
 # disable screen blanking
 exec --no-startup-id xset s off -dpms
+
+bindsym $sup+shift+s exec /usr/bin/terminator -l scrapes
 
 bindsym mod1+mod4+Right move workspace to output right
 bindsym mod1+mod4+Left move workspace to output left
